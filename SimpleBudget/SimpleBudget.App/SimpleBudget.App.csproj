@@ -52,6 +52,7 @@
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -91,6 +92,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Converters\" />
+    <Folder Include="Images\" />
+    <Folder Include="Services\" />
+    <Folder Include="ViewModel\" />
+    <Folder Include="View\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Readme.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
