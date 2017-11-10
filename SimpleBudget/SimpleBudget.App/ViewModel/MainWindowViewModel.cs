@@ -16,12 +16,14 @@ namespace SimpleBudget.App.ViewModel
         public event PropertyChangedEventHandler PropertyChanged;
         private ObservableCollection<Record> records;
         private RecordService recordService;
+        private Record selectedRecord;
 
         public MainWindowViewModel()
         {
             recordService = new RecordService();
             LoadData();
         }
+
         public ObservableCollection<Record> Records
         {
             get
@@ -34,11 +36,25 @@ namespace SimpleBudget.App.ViewModel
                 RaisePropertyChanged("Records");
             }
         }
+
+        public Record SelectedRecord {
+            get
+            {
+                return selectedRecord;
+            }
+            set
+            {
+                selectedRecord = value;
+                RaisePropertyChanged("SelectedRecord");
+            }
+        }
+
         private void RaisePropertyChanged(string propertyName)
         {
             if (PropertyChanged != null)
                 PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
         }
+
         private void LoadData()
         {
             Records = recordService.GetAllRecords().ToObservableCollection();

@@ -2,15 +2,18 @@
          xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
          xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
          xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
-         xmlns:viewmodels="clr-namespace:SimpleBudget.App.ViewModel"
-         Title="SimpleBudget"
+         DataContext="{Binding Source={StaticResource viewModelLocator}, Path=MainWindowViewModel}"
+         Title="Simple Budget"
          Height="800" Width="600">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <DataGrid ItemsSource="{Binding Records}" Name="DataGrid" Grid.Row="0" AlternatingRowBackground="LightGray" AlternationCount="2" AutoGenerateColumns="False">
+        <DataGrid ItemsSource="{Binding Records}" SelectedItem="{Binding SelectedRecord}" Name="DataGrid" Grid.Row="0" 
+                  Background="LightGreen" AlternatingRowBackground="LightGray"
+                  AlternationCount="2" AutoGenerateColumns="False"
+                  CanUserAddRows="True" CanUserDeleteRows="True">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Group" Binding="{Binding Group}" />
                 <DataGridTextColumn Header="Income" Binding="{Binding Type}" />
@@ -20,5 +23,6 @@
                 <DataGridTextColumn Header="Day" Binding="{Binding Date, StringFormat={}\{0:dd\}}" />
             </DataGrid.Columns>
         </DataGrid>
+        <Label Grid.Row="1" Name="SelectedRecord" Content="{Binding SelectedRecord.Type, Mode=OneWay}"/>
     </Grid>
 </Controls:MetroWindow>
