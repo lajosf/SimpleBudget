@@ -11,30 +11,15 @@ namespace SimpleBudget.App.Services
 {
     class RecordService : IRecordService
     {
-        private RecordRepository repository;
+        IRecordRepository repository;
 
         public RecordService() {
-            repository = new RecordRepository();
+            this.repository = new RecordRepository();
         }
 
-        public void AddRecord(Record record)
-        {
-            repository.AddRecord(record);
-        }
-
-        public void DeleteRecord(Record record)
-        {
-            repository.DeleteRecord(record);
-        }
-
-        public ObservableCollection<Record> GetAllRecords()
+        public List<Record> GetAllRecords()
         {
             return repository.GetRecords();
-        }
-
-        public void UpdateRecord(Record record)
-        {
-            repository.UpdateRecord(record);
         }
     }
 }

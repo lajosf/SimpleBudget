@@ -2,9 +2,11 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:SimpleBudget.App"
+             xmlns:converter="clr-namespace:SimpleBudget.App.Converters"
              StartupUri="View/MainWindow.xaml">
     <Application.Resources>
         <ResourceDictionary>
+            <converter:AmountConverter x:Key="localAmountConverter"></converter:AmountConverter>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />

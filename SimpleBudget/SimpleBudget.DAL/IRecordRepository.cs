@@ -8,11 +8,8 @@ using System.Threading.Tasks;
 
 namespace SimpleBudget.DAL
 {
-    interface IRecordRepository
+    public interface IRecordRepository
     {
-        void AddRecord(Record income);
-        void DeleteRecord(Record record);
-        ObservableCollection<Record> GetRecords();
-        void UpdateRecord(Record record);
+        List<Record> GetRecords();
     }
 }

@@ -14,7 +14,8 @@ namespace SimpleBudget.Model
         private string group;
         private int amount;
         private string comment;
-        private bool periodic; 
+        private bool periodic;
+        private DateTime date;
 
         public int RecordId
         {
@@ -55,11 +56,14 @@ namespace SimpleBudget.Model
             }
         }
 
-        public int Amount {
-            get {
+        public int Amount
+        {
+            get
+            {
                 return amount;
             }
-            set {
+            set
+            {
                 amount = value;
                 RaisePropertyChanged("Amount");
             }
@@ -88,6 +92,19 @@ namespace SimpleBudget.Model
             {
                 periodic = value;
                 RaisePropertyChanged("Periodic");
+            }
+        }
+
+        public DateTime Date
+        {
+            get
+            {
+                return date;
+            }
+            set
+            {
+                date = value;
+                RaisePropertyChanged("Date");
             }
         }
 

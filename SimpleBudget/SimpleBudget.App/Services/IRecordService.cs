@@ -10,9 +10,6 @@ namespace SimpleBudget.App.Services
 {
     interface IRecordService
     {
-        void AddRecord(Record record);
-        void DeleteRecord(Record record);
-        ObservableCollection<Record> GetAllRecords();
-        void UpdateRecord(Record record);
+        List<Record> GetAllRecords();
     }
 }

@@ -10,19 +10,9 @@ namespace SimpleBudget.DAL
 {
     public class RecordRepository : IRecordRepository
     {
-        private ObservableCollection<Record> records;
+        private static List<Record> records;
 
-        public void AddRecord(Record income)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void DeleteRecord(Record record)
-        {
-            throw new NotImplementedException();
-        }
-
-        public ObservableCollection<Record> GetRecords()
+        public List<Record> GetRecords()
         {
             if (records == null)
             {
@@ -31,14 +21,9 @@ namespace SimpleBudget.DAL
             return records;
         }
 
-        public void UpdateRecord(Record record)
+        private List<Record> LoadRecords()
         {
-            throw new NotImplementedException();
-        }
-
-        private ObservableCollection<Record> LoadRecords()
-        {
-            records = new ObservableCollection<Record>()
+            records = new List<Record>()
             {
                 new Record()
                 {
@@ -47,7 +32,8 @@ namespace SimpleBudget.DAL
                     Group = "Salery",
                     Amount = 10000,
                     Comment = "",
-                    Periodic = true
+                    Periodic = true,
+                    Date = new DateTime(2017,11,01)
                 },
                 new Record()
                 {
@@ -56,7 +42,18 @@ namespace SimpleBudget.DAL
                     Group = "Salery",
                     Amount = 12000,
                     Comment = "",
-                    Periodic = true
+                    Periodic = true,
+                    Date = new DateTime(2017,11,01)
+                },
+                new Record()
+                {
+                    RecordId = 3,
+                    Type = "Selling the car",
+                    Group = "Sell",
+                    Amount = 2000,
+                    Comment = "",
+                    Periodic = false,
+                    Date = new DateTime(2017,11,06)
                 }
             };
             return records;

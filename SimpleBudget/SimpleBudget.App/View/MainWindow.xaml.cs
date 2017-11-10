@@ -16,34 +16,35 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using SimpleBudget.App.Services;
 using System.Collections.ObjectModel;
+using SimpleBudget.App.ViewModel;
 
 namespace SimpleBudget.App.View
 {
     public partial class MainWindow : MetroWindow
     {
-        private ObservableCollection<Record> records;
+        //private ObservableCollection<Record> records;
 
         public MainWindow()
         {
             InitializeComponent();
-            LoadData();
-            dataGrid.ItemsSource = records;
+            DataContext = new MainWindowViewModel();
+            //LoadData();
+            //DataGrid.ItemsSource = records;
         }
 
-        private void LoadData() {
-            RecordService service = new RecordService();
-            records = service.GetAllRecords();
-            //IncomeListView.ItemsSource = records;
-        }
+        //private void LoadData() {
+        //    RecordService service = new RecordService();
+        //    records = service.GetAllRecords();
+        //}
 
-        private void SaveIncomeButton_Click(object sender, RoutedEventArgs e) {
-            StringBuilder sb = new StringBuilder();
+        //private void SaveIncomeButton_Click(object sender, RoutedEventArgs e) {
+        //    StringBuilder sb = new StringBuilder();
 
-            foreach(Record record in records){
-                sb.Append("Type: ");
-                sb.Append(record.Type+" ");
-            }
-            MessageBox.Show(sb.ToString());
-        }
+        //    foreach(Record record in records){
+        //        sb.Append("Type: ");
+        //        sb.Append(record.Type+" ");
+        //    }
+        //    MessageBox.Show(sb.ToString());
+        //}
     }
 }

@@ -79,6 +79,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Converters\AmountConverter.cs" />
+    <Compile Include="Extensions\ListExtensions.cs" />
     <Compile Include="Services\IRecordService.cs" />
     <Compile Include="Services\RecordService.cs" />
     <Compile Include="ViewModel\MainWindowViewModel.cs" />
@@ -123,7 +125,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Converters\" />
     <Folder Include="Images\" />
   </ItemGroup>
   <ItemGroup>
