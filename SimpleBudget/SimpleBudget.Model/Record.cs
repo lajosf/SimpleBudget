@@ -7,25 +7,25 @@ using System.Threading.Tasks;
 
 namespace SimpleBudget.Model
 {
-    public class Income : INotifyPropertyChanged
+    public class Record : INotifyPropertyChanged
     {
-        private int incomeId;
+        private int recordId;
         private string type;
         private string group;
         private int amount;
         private string comment;
         private bool periodic; 
 
-        public int IncomeId
+        public int RecordId
         {
             get
             {
-                return incomeId;
+                return recordId;
             }
             set
             {
-                incomeId = value;
-                RaisePropertyChanged("IncomeId");
+                recordId = value;
+                RaisePropertyChanged("RecordId");
             }
         }
 
