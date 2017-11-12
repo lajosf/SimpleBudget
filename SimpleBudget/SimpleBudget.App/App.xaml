@@ -6,8 +6,8 @@
              StartupUri="View/MainWindow.xaml">
     <Application.Resources>
         <ResourceDictionary>
-            <converter:AmountConverter x:Key="localAmountConverter"></converter:AmountConverter>
             <local:ViewModelLocator x:Key="viewModelLocator"></local:ViewModelLocator>
+            <converter:AmountConverter x:Key="localAmountConverter"></converter:AmountConverter>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />

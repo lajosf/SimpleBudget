@@ -22,29 +22,10 @@ namespace SimpleBudget.App.View
 {
     public partial class MainWindow : MetroWindow
     {
-        //private ObservableCollection<Record> records;
-
         public MainWindow()
         {
             InitializeComponent();
-            DataContext = new MainWindowViewModel();
-            //LoadData();
-            //DataGrid.ItemsSource = records;
+            //DataContext = new MainWindowViewModel();
         }
-
-        //private void LoadData() {
-        //    RecordService service = new RecordService();
-        //    records = service.GetAllRecords();
-        //}
-
-        //private void SaveIncomeButton_Click(object sender, RoutedEventArgs e) {
-        //    StringBuilder sb = new StringBuilder();
-
-        //    foreach(Record record in records){
-        //        sb.Append("Type: ");
-        //        sb.Append(record.Type+" ");
-        //    }
-        //    MessageBox.Show(sb.ToString());
-        //}
     }
 }

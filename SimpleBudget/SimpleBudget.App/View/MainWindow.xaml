@@ -5,24 +5,37 @@
          DataContext="{Binding Source={StaticResource viewModelLocator}, Path=MainWindowViewModel}"
          Title="Simple Budget"
          Height="800" Width="600">
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-        </Grid.RowDefinitions>
-        <DataGrid ItemsSource="{Binding Records}" SelectedItem="{Binding SelectedRecord}" Name="DataGrid" Grid.Row="0" 
-                  Background="LightGreen" AlternatingRowBackground="LightGray"
-                  AlternationCount="2" AutoGenerateColumns="False"
-                  CanUserAddRows="True" CanUserDeleteRows="True">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="Group" Binding="{Binding Group}" />
-                <DataGridTextColumn Header="Income" Binding="{Binding Type}" />
-                <DataGridTextColumn Header="Amount" Binding="{Binding Amount, Converter={StaticResource localAmountConverter}}" />
-                <DataGridCheckBoxColumn Header="Periodic" Binding="{Binding Periodic}" />
-                <DataGridTextColumn Header="Comment" Binding="{Binding Comment}" />
-                <DataGridTextColumn Header="Day" Binding="{Binding Date, StringFormat={}\{0:dd\}}" />
-            </DataGrid.Columns>
-        </DataGrid>
-        <Label Grid.Row="1" Name="SelectedRecord" Content="{Binding SelectedRecord.Type, Mode=OneWay}"/>
-    </Grid>
+    <TabControl>
+        <TabItem Header="Income">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid Margin="10" HorizontalAlignment="Left">
+                    <Button Grid.Row="0" x:Name="PreviousMonthIncome" Height="20" Width="80" Content="Previous" Margin="5,1,468.6,2.8"/>
+                    <TextBlock Grid.Row="0" Name="IncomeMonthSetter" Text="2017. November"  Margin="-135,6,144.6,3.6" TextAlignment="Center"/>
+                    <Button Grid.Row="0" x:Name="NextMonthIncome" Height="20" Width="80" Content="Next" Margin="189,1,284.6,3.6"/>
+                </Grid>
+                <DataGrid ItemsSource="{Binding Records}" Grid.Row="1" Name="DataGrid" SelectedItem="{Binding SelectedRecord}" AutoGenerateColumns="False" Margin="10,11.2,10,9" BorderThickness="1,1,1,1" HorizontalAlignment="Left">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Group" Binding="{Binding Group}" />
+                        <DataGridTextColumn Header="Income" Binding="{Binding Type}" />
+                        <DataGridTextColumn Header="Amount" Binding="{Binding Amount, Converter={StaticResource localAmountConverter}}" />
+                        <DataGridCheckBoxColumn Header="Periodic" Binding="{Binding Periodic}" />
+                        <DataGridTextColumn Header="Comment" Binding="{Binding Comment}" />
+                        <DataGridTextColumn Header="Day" Binding="{Binding Date, StringFormat={}\{0:dd\}}" />
+                    </DataGrid.Columns>
+                </DataGrid>
+                <Label Grid.Row="3" Name="SelectedRecord" Content="{Binding SelectedRecord.Type, Mode=OneWay}"/>
+            </Grid>
+        </TabItem>
+        <TabItem Header="Outgoing">
+            OUTGOING ...
+        </TabItem>
+        <TabItem Header="Overview">
+            OVERVIEW ...
+        </TabItem>
+    </TabControl>
 </Controls:MetroWindow>

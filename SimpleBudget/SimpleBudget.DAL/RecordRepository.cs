@@ -31,7 +31,7 @@ namespace SimpleBudget.DAL
                     Type = "Daddy salery",
                     Group = "Salery",
                     Amount = 10000,
-                    Comment = "",
+                    Comment = "No comment",
                     Periodic = true,
                     Date = new DateTime(2017,11,01)
                 },
@@ -41,7 +41,7 @@ namespace SimpleBudget.DAL
                     Type = "Mommy salery",
                     Group = "Salery",
                     Amount = 12000,
-                    Comment = "",
+                    Comment = "...",
                     Periodic = true,
                     Date = new DateTime(2017,11,01)
                 },
@@ -51,7 +51,7 @@ namespace SimpleBudget.DAL
                     Type = "Selling the car",
                     Group = "Sell",
                     Amount = 2000,
-                    Comment = "",
+                    Comment = " ",
                     Periodic = false,
                     Date = new DateTime(2017,11,06)
                 }
